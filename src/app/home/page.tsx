@@ -36,7 +36,7 @@ export default function HomePage() {
           <section className="space-y-3">
             <h2 className="text-base font-semibold text-darker">Next Step</h2>
 
-            <div className="bg-white rounded-lg drop-shadow-[0_1px_1px_#6B150F] px-4 flex items-center justify-between">
+            <div className="bg-white rounded-lg drop-shadow-[0_3px_5px_#6B150F22] px-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <Image
                   src="/social.svg"
@@ -63,7 +63,7 @@ export default function HomePage() {
               Latest Update
             </h2>
 
-            <div className="bg-snow rounded-[10px] drop-shadow-[0_1px_1px_#6B150F] px-4 py-3">
+            <div className="bg-snow rounded-[10px] drop-shadow-[0_3px_5px_#6B150F22] px-4 py-3">
               <ul className="space-y-2">
                 <li className="relative pl-3 text-base text-darker">
                   <span className="absolute left-0 top-[6px] h-[4px] w-[4px] rounded-full bg-darker" />

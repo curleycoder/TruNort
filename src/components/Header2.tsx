@@ -11,26 +11,24 @@ type HeaderProps = {
 export function Header({ title, onMenuClick, onBack }: HeaderProps) {
   return (
     <header className="relative bg-white">
-            <div className="px-4 pt-2 pb-1 flex items-center justify-between text-[10px] opacity-90" />
+            <div className="px-4 pt-6 flex items-center justify-between text-[10px] opacity-90" />
 
 
       {/* TITLE + BACK + MENU */}
       <div className="relative flex items-center justify-between px-5 py-4">
         {/* BACK BUTTON */}
         {onBack ? (
-  <button onClick={onBack} className="p-2">
-    <Image
-      src="/icons/back.svg"
-      alt="Back"
-      width={15}
-      height={15}
-    />
-  </button>
-) : (
-  <div className="w-[36px]" />
-)}
-
-
+        <button onClick={onBack} className="p-2">
+          <Image
+            src="/icons/back.svg"
+            alt="Back"
+            width={15}
+            height={15}
+          />
+        </button>
+      ) : (
+        <div className="w-[36px]" />
+      )}
         {/* TITLE */}
         <h1 className="text-2xl font-bold text-darker">{title}</h1>
 

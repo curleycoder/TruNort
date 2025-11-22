@@ -49,7 +49,7 @@ export function MenuDrawer({ open, onClose }: MenuDrawerProps) {
         {/* menu items */}
         <div className="px-6 pt-8 pb-6 flex flex-col justify-between h-[calc(100%-80px)]">
           <div className="space-y-8">
-            <MenuItem href="/arrival-guide" icon="/icons/guide.svg" label="Arrival Guide" />
+            <MenuItem href="/guide" icon="/icons/guide.svg" label="Arrival Guide" />
             <MenuItem href="/shared-experiences" icon="/icons/notes-menu.svg" label="Shared Experiences" />
             <MenuItem href="/pr-progress" icon="/icons/tracker-menu.svg" label="Permanent Residency Progress" />
             <MenuItem href="/housing" icon="/icons/housing.svg" label="Find Housing" />

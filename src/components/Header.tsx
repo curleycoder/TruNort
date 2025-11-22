@@ -11,7 +11,7 @@ export function Header({ title, onMenuClick }: HeaderProps) {
   return (
     <header className="bg-red text-white">
       {/* fake status bar spacing */}
-      <div className="px-4 pt-2 pb-1 flex items-center justify-between text-[10px] opacity-90" />
+      <div className="px-4 pt-6 pb-5 flex items-center justify-between text-[10px] opacity-90" />
 
       {/* logo + title + menu */}
       <div className="px-4 pb-3 flex items-center justify-between">
