@@ -49,7 +49,7 @@ export default function SignupProfilePage() {
 
           <a
             href="/welcome"
-              className="inline-block mx-auto rounded-md bg-red px-16 py-3 text-center text-base text-white drop-shadow-[1px_2px_6px_#6B150F]"
+            className="mt-4 block w-full rounded-md bg-red py-3 text-center text-base text-white drop-shadow-[1px_2px_6px_#6B150F]"
           >
             SAVE YOUR INFO
           </a>
