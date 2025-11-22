@@ -1,142 +1,111 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { BottomNav } from "@/components/BottomNav";
+import { Header } from "@/components/Header";
+import { MenuDrawer } from "@/components/MenuDrawer";
+
 export default function HomePage() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-white flex justify-center py-6">
       {/* phone frame */}
-      <div className="w-full max-w-sm bg-red shadow-lg overflow-hidden flex flex-col">
-        {/* -------- HEADER -------- */}
-        <header className="bg-red text-white px-4 pt-4 pb-3">
-          {/* logo + title + menu */}
-          <div className="flex items-center justify-between">
-            {/* logo placeholder */}
-            <div className="flex items-center gap-1">
-              <image className="logo.svg"></image>
-            </div>
+      <div className="relative w-[390px] bg-white shadow-xl overflow-hidden flex flex-col">
+        {/* HEADER */}
+        <Header title="Homepage" onMenuClick={() => setMenuOpen(true)} />
 
-            <h1 className="text-2xl font-semibold">Homepage</h1>
-
-            {/* hamburger */}
-            <button
-              className="h-8 w-8 flex flex-col justify-center items-center gap-[3px]"
-              aria-label="Menu"
-            >
-              <span className="w-5 h-0.5 bg-white rounded-full" />
-              <span className="w-5 h-0.5 bg-white rounded-full" />
-              <span className="w-5 h-0.5 bg-white rounded-full" />
-            </button>
-          </div>
-        </header>
-
-        {/* -------- SCROLLABLE CONTENT -------- */}
-        <div className="flex-1 bg-snow px-4 pt-4 pb-2 space-y-6 overflow-y-auto">
-          {/* hero / Start Your Journey */}
+        {/* CONTENT */}
+        <div className="flex-1 px-4 pt-4 pb-3 space-y-6 overflow-y-auto">
+          {/* hero */}
           <section>
-            <div className="relative rounded-2xl overflow-hidden shadow-md">
-              <div className="h-36 w-full bg-[url('/home-hero.png')] bg-cover bg-center" />
-              {/* red overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-darker/80 via-red/70 to-red/40" />
+            <div className="relative rounded-[10px] overflow-hidden shadow">
+              <Image
+                src="/home-hero.png"
+                alt="Start your journey"
+                width={340}
+                height={150}
+                className="h-[160px] w-full object-cover"
+              />
+              <div className="absolute inset-0" />
             </div>
           </section>
 
-          {/* Next Step */}
+          {/* NEXT STEP */}
           <section className="space-y-3">
-            <h2 className="text-base font-semibold text-taupe">Next Step</h2>
+            <h2 className="text-base font-semibold text-darker">Next Step</h2>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-silver/40 px-4 py-3 flex items-center justify-between">
-              {/* circle SIN */}
+            <div className="bg-white rounded-lg drop-shadow-[0_1px_1px_#6B150F] px-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="h-14 w-14 rounded-full border-[5px] border-red flex items-center justify-center">
-                  <span className="text-[10px] text-red font-semibold">
-                    123 456 789
-                  </span>
-                </div>
-                <p className="text-sm font-semibold text-taupe">
-                  Social Insurance Number
-                </p>
+                <Image
+                  src="/social.svg"
+                  alt="Social insurance number icon"
+                  width={80}
+                  height={80}
+                  className="h-20 w-auto"
+                />
+                <p className="text-base text-darker">Social Insurance Number</p>
               </div>
 
               <a
                 href="/arrival-guide"
-                className="text-[11px] text-red font-semibold"
+                className="text-xs text-red underline font-semibold"
               >
                 Details
               </a>
             </div>
           </section>
 
-          {/* Latest Update */}
+          {/* LATEST UPDATE */}
           <section className="space-y-2">
-            <h2 className="text-base font-semibold text-taupe">
+            <h2 className="text-base font-semibold text-darker pb-3">
               Latest Update
             </h2>
 
-            <div className="bg-snow rounded-2xl shadow-sm border border-silver/60 px-4 py-3">
-              <ul className="text-[11px] leading-relaxed text-taupe space-y-2 list-disc list-inside">
-                <li>
+            <div className="bg-snow rounded-[10px] drop-shadow-[0_1px_1px_#6B150F] px-4 py-3">
+              <ul className="space-y-2">
+                <li className="relative pl-3 text-base text-darker">
+                  <span className="absolute left-0 top-[6px] h-[4px] w-[4px] rounded-full bg-darker" />
                   <span className="underline">
                     Canada extends temporary measures for Palestinians in Canada
                   </span>
-                  <br />
-                  <span className="text-greyOlive">2025-08-01 18:48</span>
+                  <div className="text-base font-light text-grey-darker">
+                    2025-08-01 18:48
+                  </div>
                 </li>
-                <li>
+
+                <li className="relative pl-3 text-base text-darker">
+                  <span className="absolute left-0 top-[6px] h-[4px] w-[4px] rounded-full bg-darker" />
                   <span className="underline">
                     Canada invests in services to support economic integration
                     and fill labour market shortages
                   </span>
-                  <br />
-                  <span className="text-greyOlive">2025-07-23 11:02</span>
+                  <div className="text-base font-light text-grey-darker">
+                    2025-07-23 11:02
+                  </div>
                 </li>
-                <li>
+
+                <li className="relative pl-3 text-base text-darker">
+                  <span className="absolute left-0 top-[6px] h-[4px] w-[4px] rounded-full bg-darker" />
                   <span className="underline">
                     Canada launches measures to support those affected by 2025
                     wildfires
                   </span>
-                  <br />
-                  <span className="text-greyOlive">2025-07-02 11:00</span>
+                  <div className="text-base font-light text-grey-darker">
+                    2025-07-02 11:00
+                  </div>
                 </li>
               </ul>
             </div>
           </section>
         </div>
 
-        {/* -------- BOTTOM NAV -------- */}
-        <nav className="bg-white border-t border-silver/70 px-8 py-2 flex items-center justify-between text-[11px]">
-          {/* Home (active) */}
-          <a
-            href="/"
-            className="flex flex-col items-center gap-0.5 text-red font-semibold"
-          >
-            <HomeIcon active />
-            <span className="text-[10px]">Home</span>
-          </a>
+        {/* BOTTOM NAV */}
+        <BottomNav />
 
-          {/* Events */}
-          <a
-            href="/events"
-            className="flex flex-col items-center gap-0.5 text-grey-olive hover:text-red"
-          >
-            <CalendarIcon />
-            <span className="text-[10px]">Events</span>
-          </a>
-
-          {/* PR Progress */}
-          <a
-            href="/pr-progress"
-            className="flex flex-col items-center gap-0.5 text-grey-olive hover:text-red"
-          >
-            <ProgressIcon />
-            <span className="text-[10px]">PR</span>
-          </a>
-
-          {/* Profile */}
-          <a
-            href="/profile"
-            className="flex flex-col items-center gap-0.5 text-grey-olive hover:text-red"
-          >
-            <ProfileIcon />
-            <span className="text-[10px]">Profile</span>
-          </a>
-        </nav>
+        {/* SLIDE-IN MENU DRAWER */}
+        <MenuDrawer open={menuOpen} onClose={() => setMenuOpen(false)} />
       </div>
     </main>
   );

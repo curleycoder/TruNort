@@ -1,23 +1,23 @@
 import "./globals.css";
 import type { ReactNode } from "react";
+import { Oswald } from "next/font/google";
 
 export const metadata = {
   title: "TruNort",
   description: "Newcomer app",
 };
 
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <head>
-        {/* Oswald font */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      {/* bg-snow should already test your custom color */}
-      <body className="bg-white">{children}</body>
+      <body className={`${oswald.className} bg-white`}>
+        {children}
+      </body>
     </html>
   );
 }

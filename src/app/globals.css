@@ -17,3 +17,7 @@
 body {
   font-family: "Oswald", system-ui, sans-serif;
 }
+.filter-red {
+  filter: brightness(0) saturate(1000%) hue-rotate(-20deg);
+}
+
