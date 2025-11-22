@@ -20,8 +20,9 @@ const EVENTS: EventItem[] = [
     id: 1,
     title: "ARITZIA WAREHOUSE SALE 2025",
     subtitle:
-      "BACK TO EVENTS CALENDAR\nAUGUST 26 - SEPTEMBER 1 (WEST BUILDING)",
-    image: "/events/event1.png", // placeholder 1
+      "BACK TO EVENTS CALENDAR",
+      date:"AUGUST 26 - SEPTEMBER 1 (WEST BUILDING)",
+    image: "/events/event1.png",
   },
   {
     id: 2,
@@ -29,14 +30,14 @@ const EVENTS: EventItem[] = [
     subtitle:
       "Art activities & performances\nMacLean Park and Across the Eastside Arts District",
     date: "July 18–27, 2025",
-    image: "/events/event2.png", // placeholder 2
+    image: "/events/event2.png",
   },
   {
     id: 3,
     title: "The 49th Annual Vancouver Folk Music Festival",
     date: "July 17, 18, 19 | 2026",
     location: "Ḵay̓almaxw / Iy̓álmexw Jericho Beach Park",
-    image: "/events/event3.png", // placeholder 3
+    image: "/events/event3.png",
   },
 ];
 
@@ -51,7 +52,7 @@ export default function EventsPage() {
         <Header title="Local Events" onMenuClick={() => setMenuOpen(true)} />
 
         {/* CONTENT */}
-        <div className="flex-1 px-4 pt-4 pb-24 overflow-y-auto space-y-4">
+        <div className="flex-1 px-4 pt-4 pb-12 overflow-y-auto space-y-2">
           <p className="text-center text-sm text-darker">
             Find the Latest Local Events and Festivals
           </p>
@@ -75,36 +76,36 @@ export default function EventsPage() {
 
 function EventCard({ event }: { event: EventItem }) {
   return (
-    <article className="bg-white rounded-xl border border-red/25 drop-shadow-[0_1px_2px_#6B150F22] overflow-hidden">
+    <article className="bg-snow rounded-xl border border-darker/25 drop-shadow-[0_1px_2px_#6B150F] overflow-hidden">
       {/* image */}
-      <div className="w-full h-[150px] bg-silver/40">
+      <div className="w-full h-[150px] p-5">
         <Image
           src={event.image}
           alt={event.title}
           width={340}
           height={150}
-          className="w-full h-full object-cover"
+          className="w-full object-cover"
         />
       </div>
 
       {/* text */}
-      <div className="px-4 py-3 space-y-1">
-        <h3 className="text-sm font-semibold text-darker uppercase">
+      <div className="px-4 py-3 space-y-3 pt-15">
+        <h3 className="text-sm font-semibold text-black uppercase">
           {event.title}
         </h3>
 
         {event.subtitle && (
-          <p className="text-[13px] text-darker whitespace-pre-line">
+          <p className="text-xs text-black whitespace-pre-line">
             {event.subtitle}
           </p>
         )}
 
         {event.date && (
-          <p className="text-[13px] text-darker mt-1">{event.date}</p>
+          <p className="text-xs text-darker mt-1">{event.date}</p>
         )}
 
         {event.location && (
-          <p className="text-[12px] text-grey-olive">{event.location}</p>
+          <p className="text-xs text-darker">{event.location}</p>
         )}
       </div>
     </article>

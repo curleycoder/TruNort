@@ -15,7 +15,7 @@ export default function LoginPage() {
           <div className="px-4 pt-10 pb-10 space-y-1">
             <p className="text-3xl font-semibold">Hello</p>
             <p className="text-3xl font-semibold">
-              Log In To Your Account
+              Create Your Account
             </p>
           </div>
         </div>
@@ -25,37 +25,40 @@ export default function LoginPage() {
           {/* inputs */}
           <div className="space-y-4">
             <input
+              type="Name"
+              placeholder="Full Name"
+              className="w-full rounded-md bg-white px-4 py-3  text-xs font-light placeholder:text-darker drop-shadow-[0_3px_5px_#6B150F22] focus:outline-none focus:ring-2 focus:ring-red"
+            />
+            <input
               type="email"
-              placeholder="email"
+              placeholder="Email"
               className="w-full rounded-md bg-white px-4 py-3  text-xs font-light placeholder:text-darker drop-shadow-[0_3px_5px_#6B150F22] focus:outline-none focus:ring-2 focus:ring-red"
             />
             <input
               type="password"
-              placeholder="password"
+              placeholder="Password"
+              className="w-full rounded-md bg-white px-4 py-3 text-xs font-light placeholder:text-darker drop-shadow-[0_3px_5px_#6B150F22] focus:outline-none focus:ring-2 focus:ring-red"
+            />
+            <input
+              type="password"
+              placeholder="Confirm Password"
               className="w-full rounded-md bg-white px-4 py-3 text-xs font-light placeholder:text-darker drop-shadow-[0_3px_5px_#6B150F22] focus:outline-none focus:ring-2 focus:ring-red"
             />
           </div>
 
-          {/* forgot password */}
-          <div className="flex justify-end">
-            <button className="text-sm text-darker">
-              Forgot password?
-            </button>
-          </div>
-
           {/* sign in button */}
           <a
-            href="/home" // change to "/" if your main homepage is at root
+            href="/complete" // change to "/" if your main homepage is at root
               className="inline-block mx-auto rounded-md bg-red px-16 py-3 text-center text-base text-white drop-shadow-[1px_2px_6px_#6B150F]"
           >
-            SIGN IN
+            SIGN UP
           </a>
 
           {/* divider */}
           <div className="mt-10 flex items-center gap-3">
             <div className="h-px flex-1 bg-darker" />
             <span className="text-sm text-darker">
-              Or continue with
+              Or Sign Up with
             </span>
             <div className="h-px flex-1 bg-darker" />
           </div>
@@ -63,38 +66,38 @@ export default function LoginPage() {
           {/* social icons row – placeholder letters, replace with real icons if you have them */}
           <div className="flex justify-center gap-10 pt-2 text-2xl text-darker">
             <div className="flex justify-center gap-10 pt-2">
-                          <Image
-                            src="/icons/google.svg"
-                            alt="Google"
-                            width={28}
-                            height={28}
-                            className="w-8 h-8"
-                          />
-            
-                          <Image
-                            src="/icons/facebook.svg"
-                            alt="Facebook"
-                            width={28}
-                            height={28}
-                            className="w-8 h-8"
-                          />
-            
-                          <Image
-                            src="/icons/apple.svg"
-                            alt="Apple"
-                            width={28}
-                            height={28}
-                            className="w-8 h-8"
-                          />
-                        </div>
+              <Image
+                src="/icons/google.svg"
+                alt="Google"
+                width={28}
+                height={28}
+                className="w-8 h-8"
+              />
+
+              <Image
+                src="/icons/facebook.svg"
+                alt="Facebook"
+                width={28}
+                height={28}
+                className="w-8 h-8"
+              />
+
+              <Image
+                src="/icons/apple.svg"
+                alt="Apple"
+                width={28}
+                height={28}
+                className="w-8 h-8"
+              />
+            </div>
 
           </div>
 
           {/* sign up text */}
           <p className="mt-12 text-right text-xs text-darker">
             You have an account?{" "}
-            <Link href="/signup" className="font-semibold text-red">
-              Sign Up
+            <Link href="/login" className="font-semibold text-red">
+              Sign in
             </Link>
           </p>
         </div>

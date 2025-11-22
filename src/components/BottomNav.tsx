@@ -12,9 +12,9 @@ export function BottomNav() {
       <div className="flex items-center justify-between px-6 py-1.5">
         
         {/* HOME */}
-        <a href="/" className="flex flex-col items-center">
+        <a href="/home" className="flex flex-col items-center">
           <Image
-            src={isActive("/") ? "/icons/home-red.svg" : "/icons/home.svg"}
+            src={isActive("/home") ? "/icons/home-red.svg" : "/icons/home.svg"}
             alt="Home"
             width={28}
             height={28}
