@@ -4,7 +4,10 @@ import { Oswald } from "next/font/google";
 
 export const metadata = {
   title: "TruNort",
-  description: "Newcomer app",
+  description: "Newcomer support app",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 const oswald = Oswald({
@@ -15,9 +18,11 @@ const oswald = Oswald({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${oswald.className} bg-white`}>
-        {children}
-      </body>
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+      </head>
+
+      <body className={`${oswald.className} bg-white`}>{children}</body>
     </html>
   );
 }

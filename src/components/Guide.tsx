@@ -18,7 +18,7 @@ export function ArrivalDetailLayout({ slug, title, children }: Props) {
 
   const handleDone = () => {
     markArrivalItemDone(slug);
-    router.push("/arrival-guide");
+    router.push("/guide");
   };
 
   return (

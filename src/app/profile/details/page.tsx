@@ -7,13 +7,11 @@ import { Header } from "@/components/Header2";
 import { MenuDrawer } from "@/components/MenuDrawer";
 import { useRouter } from "next/navigation";
 
-
 export default function ProfileDetailsPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
 
   return (
-  
     <main className="min-h-screen bg-white flex justify-center py-6">
       {/* phone frame */}
       <div className="relative w-[390px] bg-white shadow-xl overflow-hidden flex flex-col">
@@ -30,10 +28,11 @@ export default function ProfileDetailsPage() {
             <div className="mt-10 bg-red rounded-t-[50px] px-5 pt-32 pb-10 text-white">
               <ProfileField label="First Name" placeholder="email" />
               <ProfileField label="Last Name" placeholder="" />
-              <ProfileField label="Birth Date" placeholder="DD / MM / YYYY" />
               <ProfileField label="Email" placeholder="" />
-              <ProfileField label="Phone Number" placeholder="000 - 000 - 0000" />
-              <ProfileField label="Gender" placeholder="" />
+              <ProfileField
+                label="Phone Number"
+                placeholder="000 - 000 - 0000"
+              />
             </div>
 
             {/* AVATAR OVERLAP */}
