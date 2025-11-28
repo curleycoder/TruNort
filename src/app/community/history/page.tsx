@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 import Link from "next/link";
-import { Header } from "@/components/Header";
-import { BottomNav } from "@/components/BottomNav";
+import { Header } from "@/components/Header2";
 import { MenuDrawer } from "@/components/MenuDrawer";
 
 const historySections = [
@@ -30,26 +31,36 @@ const historySections = [
     slug: "immigration-waves",
     title: "Immigration Waves",
     subtitle: "Late 1800s–1900s",
-    image: "/history/confederation.jpg",
+    image: "/history/immigration.png",
   },
   {
     slug: "world-wars",
     title: "World Wars",
     subtitle: "(1914–1945)",
-    image: "/history/confederation.jpg",
+    image: "/history/world.jpg",
+  },
+  {
+    slug: "world-wars",
+    title: "World Wars",
+    subtitle: "(1914–1945)",
+    image: "/history/world.jpg",
   },
 ];
 
 export default function CanadaHistoryPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
   return (
     <main className="min-h-screen bg-white flex justify-center py-6">
       {/* phone frame */}
       <div className="relative w-[390px] bg-white shadow-xl overflow-hidden flex flex-col">
         {/* RED HEADER */}
-        <Header title="Canada History" onMenuClick={() => setMenuOpen(true)} />
-
+        <Header
+          title="Canada History"
+          onMenuClick={() => setMenuOpen(true)}
+          onBack={() => router.push("/community")}
+        />
         {/* CONTENT */}
         <div className="flex-1 px-6 pt-6 pb-6 overflow-y-auto">
           <p className="text-center text-[11px] text-darker mb-4">
@@ -62,10 +73,6 @@ export default function CanadaHistoryPage() {
             ))}
           </div>
         </div>
-
-        {/* BOTTOM NAV */}
-        <BottomNav />
-
         {/* MENU DRAWER */}
         <MenuDrawer open={menuOpen} onClose={() => setMenuOpen(false)} />
       </div>
@@ -99,9 +106,7 @@ function HistoryCard({ item }: { item: HistoryItem }) {
             <div className="text-sm font-semibold text-darker">
               {item.title}
             </div>
-            <div className="text-[11px] text-darker">
-              {item.subtitle}
-            </div>
+            <div className="text-[11px] text-darker">{item.subtitle}</div>
           </div>
 
           <div className="flex justify-end mt-2">

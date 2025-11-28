@@ -13,7 +13,7 @@ export default function LoginPage() {
           {/* title text */}
           <div className="px-4 pt-10 pb-10 space-y-1">
             <p className="text-3xl font-semibold">Hello</p>
-            <p className="text-2xl font-semibold">Log In To Your Account</p>
+            <p className="text-3xl font-semibold">Log In To Your Account</p>
           </div>
         </div>
 
@@ -40,7 +40,7 @@ export default function LoginPage() {
 
           {/* sign in button */}
           <a
-            href="/home" // change to "/" if your main homepage is at root
+            href="/home"
             className="mt-2 block w-full rounded-md bg-red py-3 text-center text-base text-white drop-shadow-[1px_2px_6px_#6B150F]"
           >
             SIGN IN
