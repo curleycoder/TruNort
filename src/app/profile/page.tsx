@@ -19,43 +19,42 @@ export default function ProfilePage() {
         {/* CONTENT */}
         <div className="flex-1 pb-3 space-y-6 overflow-y-auto">
           {/* avatar + name */}
-            <div className="flex bg-red pt-10 flex-col rounded-b-[40px] items-center">
-                <Image
-                src="/profile1.svg"
-                alt="Profile avatar"
-                width={100}
-                height={100}
-                className="rounded-full bg-white border-4 border-white shadow-md"
-                />
-                <p className="text-lg text-white mt-2 mb-8">Shabnam</p>
-            </div>
+          <div className="flex bg-red pt-10 flex-col rounded-b-[40px] items-center">
+            <Image
+              src="/profile1.svg"
+              alt="Profile avatar"
+              width={100}
+              height={100}
+              className="rounded-full bg-white border-4 border-white shadow-md"
+            />
+            <p className="text-lg text-white mt-2 mb-8">Shabnam</p>
+          </div>
 
           <section className="px-4 pt-4 bg-white divide-y">
-  <ProfileRow
-    icon="/profile/user.svg"
-    label="My Profile"
-    href="/profile/details"
-  />
+            <ProfileRow
+              icon="/profile/user.svg"
+              label="My Profile"
+              href="/profile/details"
+            />
 
-  <ProfileRow
+            {/* <ProfileRow
     icon="/profile/archive.svg"
     label="Archive"
     href="/profile/archive"
-  />
+  /> */}
 
-  <ProfileRow
-    icon="/profile/save.svg"
-    label="Saved Info"
-    href="/profile/saved"
-  />
+            <ProfileRow
+              icon="/profile/save.svg"
+              label="Saved Info"
+              href="/profile/saved"
+            />
 
-  <ProfileRow
-    icon="/icons/settings.svg"
-    label="Settings"
-    href="/profile/settings"
-  />
-</section>
-
+            <ProfileRow
+              icon="/icons/settings.svg"
+              label="Settings"
+              href="/settings"
+            />
+          </section>
         </div>
 
         {/* BOTTOM NAV */}
@@ -74,7 +73,15 @@ type ProfileRowProps = {
   href?: string;
 };
 
-function ProfileRow({ icon, label, href }: { icon: string; label: string; href: string }) {
+function ProfileRow({
+  icon,
+  label,
+  href,
+}: {
+  icon: string;
+  label: string;
+  href: string;
+}) {
   return (
     <a
       href={href}
@@ -90,8 +97,6 @@ function ProfileRow({ icon, label, href }: { icon: string; label: string; href: 
         />
         <span className="text-base">{label}</span>
       </div>
-
-
     </a>
   );
 }

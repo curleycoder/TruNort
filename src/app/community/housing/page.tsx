@@ -5,65 +5,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Header } from "@/components/Header2";
 import { MenuDrawer } from "@/components/MenuDrawer";
-
-const listings = [
-  {
-    id: 1,
-    image: "/housing/apt1.jpg",
-    location: "Burnaby",
-    type: "Apartment",
-    price: "$2,000 / month",
-  },
-  {
-    id: 2,
-    image: "/housing/apt2.jpg",
-    location: "Burnaby",
-    type: "Apartment",
-    price: "$2,000 / month",
-  },
-  {
-    id: 3,
-    image: "/housing/apt3.jpg",
-    location: "Burnaby",
-    type: "Apartment",
-    price: "$2,000 / month",
-  },
-  {
-    id: 4,
-    image: "/housing/apt4.jpg",
-    location: "Burnaby",
-    type: "Apartment",
-    price: "$2,000 / month",
-  },
-  {
-    id: 5,
-    image: "/housing/apt5.jpg",
-    location: "Burnaby",
-    type: "Apartment",
-    price: "$2,000 / month",
-  },
-  {
-    id: 6,
-    image: "/housing/apt6.jpg",
-    location: "Burnaby",
-    type: "Apartment",
-    price: "$2,000 / month",
-  },
-  {
-    id: 7,
-    image: "/housing/apt3.jpg",
-    location: "Burnaby",
-    type: "Apartment",
-    price: "$2,000 / month",
-  },
-  {
-    id: 8,
-    image: "/housing/apt4.jpg",
-    location: "Burnaby",
-    type: "Apartment",
-    price: "$2,000 / month",
-  },
-];
+import { housingListings } from "./listings";
 
 export default function FindHousingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -88,8 +30,13 @@ export default function FindHousingPage() {
 
           {/* grid of listings */}
           <div className="grid grid-cols-2 gap-x-4 gap-y-6">
-            {listings.map((item) => (
-              <div key={item.id} className="flex flex-col">
+            {housingListings.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => router.push(`/community/housing/${item.id}`)}
+                className="flex flex-col text-left focus:outline-none"
+              >
                 <div className="w-full overflow-hidden rounded-lg shadow-sm">
                   <Image
                     src={item.image}
@@ -116,7 +63,7 @@ export default function FindHousingPage() {
                     {item.price}
                   </div>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>

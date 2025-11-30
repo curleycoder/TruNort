@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { BottomNav } from "@/components/BottomNav";
 import { Header } from "@/components/Header2";
 import { MenuDrawer } from "@/components/MenuDrawer";
 import { useRouter } from "next/navigation";
@@ -25,7 +24,7 @@ export default function ProfileDetailsPage() {
         <div className="flex-1 pt-5 bg-white">
           <div className="relative h-full">
             {/* RED FORM BLOCK */}
-            <div className="mt-10 bg-red rounded-t-[50px] px-5 pt-32 pb-10 text-white">
+            <div className="mt-10 bg-red rounded-t-[50px] px-5 pt-32 pb-70 text-white">
               <ProfileField label="First Name" placeholder="email" />
               <ProfileField label="Last Name" placeholder="" />
               <ProfileField label="Email" placeholder="" />
@@ -33,6 +32,15 @@ export default function ProfileDetailsPage() {
                 label="Phone Number"
                 placeholder="000 - 000 - 0000"
               />
+              <div className="absolute left-1/2 -translate-x-1/2 top-[70%] w-auto">
+                <button
+                  type="button"
+                  onClick={() => router.push("/profile")}
+                  className="px-10 rounded-md bg-snow py-2 text-center text-base text-darker drop-shadow-[1px_1px_6px_#6B150F]"
+                >
+                  Save
+                </button>
+              </div>
             </div>
 
             {/* AVATAR OVERLAP */}
@@ -64,9 +72,6 @@ export default function ProfileDetailsPage() {
             </div>
           </div>
         </div>
-
-        {/* BOTTOM NAV */}
-        <BottomNav />
 
         {/* MENU DRAWER */}
         <MenuDrawer open={menuOpen} onClose={() => setMenuOpen(false)} />
